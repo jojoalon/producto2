@@ -1,0 +1,26 @@
+<div class="d-flex justify-content-center">
+  @if (product) {
+    <div class="card my-4" style="max-width: 600px;">
+      <div class="row g-0">
+        <div class="col-md-4 d-flex align-items-center justify-content-center p-3">
+          <img [src]="product.image" class="img-fluid rounded-start" alt="{{ product.title }}">
+        </div>
+        <div class="col-md-8">
+          <div class="card-body">
+            <h5 class="card-title text-center">{{ product.title }}</h5>
+            <p class="card-text"><strong>ID:</strong> {{ product.id }}</p>
+            <p class="card-text"><strong>Precio:</strong> ${{ product.price}}</p>
+            <p class="card-text"><strong>Categoría:</strong> {{ product.category }}</p>
+            <p class="card-text">{{ product.description }}</p>
+            <button class="btn btn-color1 mt-3" (click)="goBack()">Volver a Productos</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  } @else {
+    <div class="alert alert-warning my-4 text-center" role="alert">
+      Cargando detalles del producto o producto no encontrado...
+    </div>
+  }
+</div>
+

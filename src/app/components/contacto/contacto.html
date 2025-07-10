@@ -1,0 +1,50 @@
+<div class="container my-4">
+  <div class="row justify-content-center">
+    <div class="col-md-6">
+      <div class="card">
+        <div class="card-header text-center bg-info text-white">
+          <h2>Contáctanos</h2>
+        </div>
+        <div class="card-body">
+          <form [formGroup]="contactForm" (ngSubmit)="onSubmit()">
+
+            <div class="mb-3">
+              <label for="email" class="form-label">Correo Electrónico</label>
+              <input type="email" class="form-control" id="email" formControlName="email"
+                     [class.is-invalid]="contactForm.get('email')?.invalid && contactForm.get('email')?.touched">
+              @if (contactForm.get('email')?.invalid && contactForm.get('email')?.touched) {
+                <div class="invalid-feedback">
+                  @if (contactForm.get('email')?.errors?.['required']) {
+                    El correo electrónico es obligatorio.
+                  } @else if (contactForm.get('email')?.errors?.['email']) {
+                    Por favor, introduce un formato de correo válido.
+                  }
+                </div>
+              }
+            </div>
+
+            <div class="mb-3">
+              <label for="message" class="form-label">Mensaje</label>
+              <textarea class="form-control" id="message" formControlName="message" rows="4"
+                        [class.is-invalid]="contactForm.get('message')?.invalid && contactForm.get('message')?.touched"></textarea>
+              @if (contactForm.get('message')?.invalid && contactForm.get('message')?.touched) {
+                <div class="invalid-feedback">
+                  @if (contactForm.get('message')?.errors?.['required']) {
+                    El mensaje es obligatorio.
+                  } @else if (contactForm.get('message')?.errors?.['minlength']) {
+                    El mensaje debe tener al menos 7 caracteres.
+                  }
+                </div>
+              }
+            </div>
+
+            <div class="d-grid gap-2 d-md-flex justify-content-md-end mt-4">
+              <button type="button" class="btn btn-color2" (click)="onReset()">Resetear Formulario</button>
+              <button type="submit" class="btn btn-color1" [disabled]="contactForm.invalid">Enviar Mensaje</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

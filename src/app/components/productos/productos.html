@@ -1,0 +1,38 @@
+<div class="d-flex justify-content-between align-items-center mb-3">
+  <h2>Listado de Productos</h2>
+  <button class="btn btn-success" routerLink="/productos/nuevo">
+    Agregar Producto
+  </button>
+</div>
+
+@if (productos.length > 0) {
+  <table class="table table-striped table-hover">
+    <thead>
+      <tr>
+        <th scope="col">ID</th>
+        <th scope="col">Nombre</th>
+        <th scope="col">Precio</th>
+        <th scope="col">Acciones</th>
+      </tr>
+    </thead>
+    <tbody>
+      @for (product of productos; track product.id) {
+        <tr>
+          <td>{{ product.id }}</td>
+          <td>{{ product.title }}</td>
+          <td>${{ product.price }}</td>
+          <td>
+            <button class="btn btn-info btn-sm" routerLink="/productos/{{ product.id }}">
+              Ver Detalles
+            </button>
+          </td>
+        </tr>
+      }
+    </tbody>
+  </table>
+} @else {
+  <div class="alert alert-info" role="alert">
+    No se encontraron productos
+  </div>
+}
+
