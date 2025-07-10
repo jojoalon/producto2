@@ -1,3 +1,20 @@
 .btn-color{
   background-color:chartreuse;
 }
+.btn-color1{
+  background-color: #011b36;
+  color: white;
+}
+.btn-color2{
+  background-color: #0b2b01;
+  color: yellow;
+}
+.btn-color3{
+  background-color: #000000;
+  color: white;
+}
+.btn-color3:hover{
+  background-color:blueviolet;
+  color: black;
+}
+
