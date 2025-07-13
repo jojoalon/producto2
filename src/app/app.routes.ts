@@ -8,7 +8,7 @@ import { ContactoComponent } from './components/contacto/contacto';
 
 export const routes: Routes = [
   { path: '', redirectTo: '/inicio', pathMatch: 'full' },
-  { path: 'inicio', loadComponent: () => import('./components/inicio/inicio').then(m => m.InicioComponent) },
+  { path: 'inicio', component: InicioComponent },
   { path: 'productos', loadComponent: () => import('./components/productos/productos').then(m => m.ProductosComponent) },
   { path: 'productos/nuevo', loadComponent: () => import('./components/producto-form/producto-form').then(m => m.ProductoFormComponent) },
   { path: 'productos/editar/:id', loadComponent: () => import('./components/producto-form/producto-form').then(m => m.ProductoFormComponent) },
