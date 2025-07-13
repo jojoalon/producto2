@@ -12,7 +12,7 @@ import { NavbarComponent } from './components/navbar/navbar';
     NavbarComponent
   ],
   templateUrl: './app.component.html',
-  styleUrl: './app.component.css' // Asegúrate de que apunte a este archivo.
+  styleUrl: './app.component.css' 
 })
 export class AppComponent {
   title = 'producto2';
