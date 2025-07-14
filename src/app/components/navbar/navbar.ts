@@ -7,7 +7,7 @@ import { RouterLink, RouterLinkActive } from '@angular/router'; // <--- ASEGÚRA
   standalone: true,
   imports: [
     CommonModule,
-    RouterLink,           // <--- Y ESTAS DOS DIRECTIVAS ESTÉN AQUÍ
+    RouterLink,          
     RouterLinkActive
   ],
   templateUrl: './navbar.html',
